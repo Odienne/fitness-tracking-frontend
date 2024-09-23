@@ -1,0 +1,59 @@
+<div>
+  <div nz-row>
+
+    <h1 nz-card-grid [ngStyle]="gridStyle">Workout</h1>
+  </div>
+
+  <div nz-row>
+    <div nz-col nzFlex="2">
+      <nz-card nzType="inner" style="margin-top: 16px;" nzTitle="Post new workout">
+        <form nz-form [formGroup]="workoutForm" class="custom-form" (ngSubmit)="submitForm()">
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please input the type of your workout!">
+              <nz-select nzAllowClear nzPlaceHolder="Select the type of your workout" formControlName="type">
+                <nz-option *ngFor="let type of listOfTypes" [nzValue]="type" [nzLabel]="type"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please input the calories!">
+              <input type="text" nz-input formControlName="caloriesBurned" placeholder="Enter the calories you burned">
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please enter the steps!">
+              <input type="number" nz-input formControlName="steps" placeholder="Enter steps!">
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please input the date!">
+              <nz-date-picker style="width: 100%;" formControlName="date"></nz-date-picker>
+            </nz-form-control>
+          </nz-form-item>
+
+          <button nz-button nzType="primary" nzBlock class="w-100" [disabled]="workoutForm.invalid">
+            Post workout
+          </button>
+        </form>
+      </nz-card>
+    </div>
+    <div nz-col nzFlex="3" style="margin-left: 20px;">
+      <nz-card nzType="inner" style="margin-top: 16px;" nzTitle="Past workouts">
+        <div nz-card-grid style="width: 100%;" *ngFor="let workout of workouts">
+          <div nz-col nzSpan="30">
+            Calories burned: <strong>{{ workout.caloriesBurned }}</strong>
+            -
+            Type: <strong>{{ workout.type }}</strong>
+            -
+            Steps : <strong>{{ workout.steps }}</strong>
+            -
+            Date : <strong>{{ workout.date | date }}</strong>
+          </div>
+        </div>
+      </nz-card>
+    </div>
+  </div>
+</div>
