@@ -1,0 +1,46 @@
+<div>
+  <div nz-row>
+    <h1 nz-card-grid [ngStyle]="gridStyle">Dashboard</h1>
+  </div>
+
+  <div nz-row>
+    <div nz-col [nzXs]="{span: 5, offset: 1}"
+         [nzLg]="{span: 6, offset: 2}">
+      <nz-card nzTitle="Total calories burned" style="background: aliceblue">
+        <p>{{ statsData?.totalCaloriesBurned }} cal</p>
+      </nz-card>
+    </div>
+    <div nz-col [nzXs]="{span: 11, offset: 1}"
+         [nzLg]="{span: 6, offset: 2}">
+      <nz-card nzTitle="Total distance covered" style="background: aliceblue">
+        <p>{{ statsData?.distance }} Km</p>
+      </nz-card>
+    </div>
+    <div nz-col [nzXs]="{span: 5, offset: 1}"
+         [nzLg]="{span: 6, offset: 2}">
+      <nz-card nzTitle="Total step taken" style="background: aliceblue">
+        <p>{{ statsData?.steps }} steps</p>
+      </nz-card>
+    </div>
+  </div>
+  <div nz-row style="margin-top: 24px">
+    <div nz-col [nzXs]="{span: 5, offset: 1}"
+         [nzLg]="{span: 6, offset: 2}">
+      <nz-card nzTitle="Total time spent" style="background: aliceblue">
+        <p>{{ statsData?.duration }} cal</p>
+      </nz-card>
+    </div>
+    <div nz-col [nzXs]="{span: 5, offset: 1}"
+         [nzLg]="{span: 6, offset: 2}">
+      <nz-card nzTitle="Achieved goals" style="background: aliceblue">
+        <p>{{ statsData?.achievedGoals }}</p>
+      </nz-card>
+    </div>
+    <div nz-col [nzXs]="{span: 5, offset: 1}"
+         [nzLg]="{span: 6, offset: 2}">
+      <nz-card nzTitle="Ongoing goals" style="background: aliceblue">
+        <p>{{ statsData?.ongoingGoals }}</p>
+      </nz-card>
+    </div>
+  </div>
+</div>
