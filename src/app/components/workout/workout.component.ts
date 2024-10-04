@@ -50,7 +50,7 @@ export class WorkoutComponent {
     this.workoutForm = this.fb.group({
       type: [null, [Validators.required]],
       caloriesBurned: [null, [Validators.required]],
-      steps: [null, [Validators.required]],
+      duration: [null, [Validators.required]],
       date: [null, [Validators.required]]
     })
     this.getAllWorkouts();
