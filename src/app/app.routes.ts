@@ -6,6 +6,9 @@ import {DashboardComponent} from "./components/dashboard/dashboard.component";
 
 export const routes: Routes = [
   {
+    path: "", redirectTo: "dashboard", pathMatch: "full"
+  },
+  {
     path: "activity", component: ActivityComponent
   },
   {
@@ -16,5 +19,8 @@ export const routes: Routes = [
   },
   {
     path: "dashboard", component: DashboardComponent
+  },
+  {
+    path: "**", redirectTo: "dashboard", pathMatch: "full"
   }
 ];
